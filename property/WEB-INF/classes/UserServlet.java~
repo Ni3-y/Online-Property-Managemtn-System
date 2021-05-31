@@ -1,0 +1,140 @@
+
+package User;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpSession;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+import java.sql.SQLException;
+
+import java.sql.*;
+import java.io.*;
+import java.util.*;
+
+public class UserServlet extends HttpServlet 
+{
+			
+	Connection con=null;
+	Statement st= null; 
+	ResultSet rs= null; 
+
+			public UserServlet() throws SQLException, IOException
+			{
+
+				try { 
+							Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+							con = DriverManager.getConnection("jdbc:mysql://localhost/pathfinder","root", ""); 
+							st = con.createStatement(); 
+					
+					}catch(Exception ce){
+						
+						System.out.println(ce);
+						
+					} 
+
+			}
+			  public void init() throws ServletException
+			 {
+					
+			  }
+  
+			 protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+			{
+				doPost(req, res);
+			  }
+			  public void destroy()
+			{
+				System.out.println("destroy() executed");
+			  }
+
+		 protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+		{
+				
+				String userAction            = request.getParameter("userAction");
+
+				if(userAction != null && !userAction.equals("")){
+
+						if(userAction.equals("login")){
+						
+								String userName            = request.getParameter("txt_userName");
+								String userPass              = request.getParameter("txtPassword");
+
+								try{ 
+										rs = st.executeQuery("SELECT * FROM tbl_customer where cust_user_name='"+userName+"' and cust_password='"+userPass+"'"); 
+												
+										if(rs.next()) { 
+											
+											String cust_id			= rs.getString(1); 
+											
+											HttpSession session = request.getSession(true);
+
+											session.setAttribute("cust_id", cust_id);
+											
+											response.sendRedirect("/pathfinder/Top/Home/Home_page.jsp");
+										
+										}else{
+											
+											response.sendRedirect("/pathfinder/Top/Login/Login.jsp");
+										}
+
+							}catch(SQLException exception){ 	} 
+
+
+						}
+
+				}else{
+
+						String strUserName		= request.getParameter("txt_UserName");
+						String strPassword		= request.getParameter("txt_Password");
+						String strGender			= request.getParameter("rad_Gender");
+						String strFirstName		= request.getParameter("txt_FName");
+						String strLastName		= request.getParameter("txt_LName");
+						String strAddress		= request.getParameter("txt_Address");
+						int strCode					= Integer.parseInt(request.getParameter("txt_Code"));
+						String strCity				= request.getParameter("txt_City");
+						String strState			= request.getParameter("cmd_state_list");
+						String strCountry		= request.getParameter("cmd_Country");
+						String strEmail			= request.getParameter("txt_Email");
+						String strTelephone		= request.getParameter("txt_TelNo");
+						String strFaxNo			= request.getParameter("txt_FxNo");
+						String strMobile			= request.getParameter("txt_Mobile");
+					
+
+						GregorianCalendar calendar = new GregorianCalendar();
+							
+						String currDate = calendar.get(Calendar.YEAR) +"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.DAY_OF_MONTH);  
+
+						  try 
+						{
+								String anSQLStmt = " INSERT INTO tbl_customer(cust_user_name,cust_password,cust_gender,cust_first_name,cust_last_name,cust_address,cust_zip_code,cust_city,cust_state,cust_country,cust_email,cust_phone,cust_fax_no,cust_mob,cust_regisration_dt) VALUES ( '"+strUserName+"','"+ strPassword+"','"+ strGender+"','"+ strFirstName+"','"+ strLastName+"','"+strAddress+"',"+ strCode+",'"+ strCity+"','"+ strState+"','"+ strCountry+"','"+ strEmail+"','"+ strTelephone+"','"+ strFaxNo+"','"+ strMobile+"','"+currDate+"')";
+								Statement stmt = con.createStatement();
+								int numRowsAffected = stmt.executeUpdate(anSQLStmt);
+								System.out.println("Number of rows affected: " + numRowsAffected);
+								stmt.close();
+
+								if(numRowsAffected > 0){
+									response.sendRedirect("sucessMsg.html");
+								}
+						  }
+						catch (SQLException sqle) 
+						{
+							sqle.printStackTrace();
+						  }
+						
+				
+			}
+		
+		
+		}
+
+			
+}
+
+

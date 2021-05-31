@@ -1,0 +1,23 @@
+<html>
+<body background="Images/blue.jpg">
+<center>
+<font size=5 face="arial black" color=orange>	
+<h><u>
+Categeory</h>
+</font>
+<center>
+
+
+<b><u><br>
+<a href=Appartments.html><font size=4 face="arial" color=yellow>Appartments</a>
+<br><br><a href=Flats.html><font size=4 face="arial" color=yellow>Flats</a>
+<br><br><a href=Lands.html><font size=4 face="arial" color=yellow>Lands</a>
+<br><br><a href=Plots.html><font size=4 face="arial" color=yellow>Plots</a>
+<br><br><a href=Commercial.html><font size=4 face="arial" color=yellow>Commercial Office</a>
+<br><br><a href=Shops.html><font size=4 face="arial" color=yellow>Shops</a>
+<br><br><a href=Rowhouse.html><font size=4 face="arial" color=yellow>Rowhouse</a>
+<br><br><a href=Bungalo.html><font size=4 face="arial" color=yellow>Bungalo</a>
+</font>
+</center>
+</body>
+</html>

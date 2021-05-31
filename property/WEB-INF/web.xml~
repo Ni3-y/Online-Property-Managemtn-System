@@ -1,0 +1,100 @@
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+<servlet>
+    <servlet-name>Hello</servlet-name>
+        <servlet-class>Hello.hello</servlet-class>
+</servlet>
+
+ <servlet-mapping>
+        <servlet-name>Hello</servlet-name>
+        <url-pattern>/Hello</url-pattern>
+</servlet-mapping>
+  
+
+<servlet>
+    <servlet-name>a</servlet-name>
+        <servlet-class>a</servlet-class>
+</servlet>
+
+ <servlet-mapping>
+        <servlet-name>a</servlet-name>
+        <url-pattern>/a</url-pattern>
+</servlet-mapping>
+
+
+
+
+<servlet>
+    <servlet-name>UserServlet</servlet-name>
+        <servlet-class>User.UserServlet</servlet-class>
+</servlet>
+
+ <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/User</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+        <servlet-name>AgentServlet</servlet-name>
+        <servlet-class>Agent.AgentServlet</servlet-class>
+    </servlet>
+
+ <servlet-mapping>
+        <servlet-name>AgentServlet</servlet-name>
+        <url-pattern>/Agent</url-pattern>
+ </servlet-mapping>
+
+
+ <servlet>
+        <servlet-name>CustomerServlet</servlet-name>
+        <servlet-class>Customer.CustomerServlet</servlet-class>
+    </servlet>
+
+ <servlet-mapping>
+        <servlet-name>CustomerServlet</servlet-name>
+        <url-pattern>/Customer</url-pattern>
+ </servlet-mapping>
+
+
+ <servlet>
+        <servlet-name>CategoryServlet</servlet-name>
+        <servlet-class>Category.CategoryServlet</servlet-class>
+    </servlet>
+
+ <servlet-mapping>
+        <servlet-name>CategoryServlet</servlet-name>
+        <url-pattern>/Category</url-pattern>
+ </servlet-mapping>
+
+
+<servlet>
+        <servlet-name>PropertyServlet</servlet-name>
+        <servlet-class>Property.PropertyServlet</servlet-class>
+    </servlet>
+
+ <servlet-mapping>
+        <servlet-name>PropertyServlet</servlet-name>
+        <url-pattern>/Property</url-pattern>
+ </servlet-mapping>
+
+
+<servlet>
+    <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>Admin.AdminServlet</servlet-class>
+</servlet>
+
+ <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/Admin</url-pattern>
+</servlet-mapping>
+
+
+<welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+</welcome-file-list>
+
+
+</web-app>

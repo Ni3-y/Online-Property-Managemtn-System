@@ -1,0 +1,11 @@
+<TABLE border=0 cellSpacing=0 cellPadding=4 width=100%>
+<tr bgcolor=lightyellow align=center><td width=20%>&nbsp</td>
+	<td><font color="001122"><b>| &nbsp <a href="Admin.jsp" >Home</a></b></font></td>
+	<td><font color="001122"><b>|  &nbsp<a href="Top/Book/AddBook.jsp"> Book</a></b></font></td>
+	<td><font color="001122"><b>| <a href="Support/AddCategory.jsp" >Insert Category </a></b></font></td>
+	<td><font color="001122"><b>|  &nbsp<a href="Support/Order.jsp"> Order</a></b></font></td>
+	<td><font color="001122"><b>| &nbsp<a href="Support/Feedback.jsp"> Feedback </a>|</b></font></td>
+	<td><font color="001122"><b>| Logout</b></font></td>
+	
+</tr>
+</TABLE>

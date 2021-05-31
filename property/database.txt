@@ -1,0 +1,116 @@
+1)Creating database
+	
+create database myproj
+
+1)Admin
+create table admin(admin_id integer primary key auto_increment,admin_user_name varchar(15) NOT NULL,
+admin_password varchar(15
+) NOT NULL );
+
+2)Customer
+
+create table customer(cust_id integer primary key auto_increment,
+cust_user_name varchar(15) NOT NULL,
+cust_password varchar(15) NOT NULL,
+cust_gender char NOT NULL,
+cust_first_name varchar(10) NOT NULL,
+cust_last_name varchar(10) NOT NULL, 
+cust_address text NOT NULL,
+ cust_zip_code integer(8) NOT NULL,
+cust_city varchar(15) NOT NULL,
+cust_state varchar (15) NOT NULL, 
+cust_country varchar(15) NOT NULL
+,cust_email varchar(30),
+ cust_phone varchar(12) NOT
+ NULL,cust_registration_date date NOT NULL,admin_id integer NOT NULL references customer(cust_id) on delete cascade on update cascade );
+
+
+
+3)Agent
+
+
+create table agent(agent_id integer primary key auto_increment,agent_user_name
+ varchar(15) NOT NULL,agent_password varchar(8) NOT NULL,agent_gender char NOT NULL,
+agent_first_name varchar(10) NOT NULL,agent_last_name varchar(10) NOT NULL,
+agent_address text NOT NULL, agent_zip_code integer(8) NOT NULL,agent_city varchar(15) 
+NOT NULL,agent_state varchar(15) NOT NULL,agent_country varchar(15) NOT NULL,agent_email 
+varchar(30), agent_phone varchar(12) NOT NULL,agent_registration_date date NOT NULL,
+admin_id integer NOT NULL references agent(agent_id) 
+on delete cascade on update cascade );
+
+
+
+4)Category
+create table category(cat_id integer primary key auto_increment,cat_name varchar(20) NOT NULL,is_category_active
+ char NOT NULL);
+
+
+5)Property:
+create table property( property_id integer primary key auto_increment ,property_name varchar(20) NOT NULL, property_location varchar(20) NOT NULL, property_price integer , property_type varchar(15), is_property_active char NOT NULL, property_image varchar(10), contact varchar(15) not null, cat_id integer references property(property_id), agent_id integer references property(property_id), cust_id integer references property(property_id)on delete cascade on update cascade ); 
+
+
+
+
+
+
+
+***********Inserting values********
+
+1)admin
+
+insert into admin(admin_id,admin_user_name,admin_password)values(1,'prashant','prashant'); 
+
+insert into admin(admin_user_name,admin_password)values('prashant','prashant'); 
+
+
+
+2)Customer
+
+ insert into customer values(1,'raj','raj','M','Raj','Yadav','Katraj','411312','Pune','Maharastra','India','raj@gmail.com','9881788788','2011-1-25');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into customer(cust_user_name,cust_password,cust_gender,cust_first_name,cust_last_name,cust_address, cust_zip_code,cust_city,cust_state,cust_country,cust_email,cust_phone,cust_registration_date) values ('vivek','vivek','m','vivek','Deshmukh','chinchwad',412315,'pune','maharastra','india','vivek@yahoo.com','9820098200','2011-1-15');
+Query OK, 1 row affected (0.00 sec)
+
+
+
+3)Agent
+
+
+**)
+insert into agent(agent_id,agent_user_name,agent_password,agent_gender,agent_first_name,agent_last_name,agent_address,
+agent_zip_code,agent_city,agent_state,agent_country,agent_email,agent_phone,agent_registration_date,admin_id )
+values
+(1,'amol','amol','m','amol','yesade','srpf',412310,'pune','maharastra','india','amolyesade@gmail.com',9822622622,
+'2011-1-15',1);
+
+**)
+insert into agent(agent_user_name,agent_password,agent_gender,agent_first_name,agent_last_name,agent_address,
+agent_zip_code,agent_city,agent_state,agent_country,agent_email,agent_phone,agent_registration_date,admin_id )
+values
+('vinayak','vinayak','m','vinayak','bhagat','kothrud',412315,'pune','maharastra','india','vinayak@gmail.com',8055110682,
+'2011-1-1',1);
+
+**)
+insert into agent(agent_user_name,agent_password,agent_gender,agent_first_name,agent_last_name,agent_address,
+agent_zip_code,agent_city,agent_state,agent_country,agent_email,agent_phone,agent_registration_date,admin_id )
+values
+('mayur','mayur','m','mayur','kulkarni','Dadar',420420,'Mumbai','maharastra','india','mayur@yahoo.com',9623788788,
+'2011-1-11',1);
+
+
+
+4)Category
+insert into category(cat_id ,cat_name,is_category_active) values(1,'Appartments','y');
+insert into category(cat_name,is_category_active) values('Flats','y');
+insert into category(cat_name,is_category_active) values('Lands','y');
+insert into category(cat_name,is_category_active) values('Plots','y');
+insert into category(cat_name,is_category_active) values('Shops','y');
+insert into category(cat_name,is_category_active) values('Commercial offices','y');
+insert into category(cat_name,is_category_active) values('Row Houses','y');
+insert into category(cat_name,is_category_active) values('Bungalo','y');
+
+
+5)Property:
+insert into property values('','Swami Vihar','Balajinagar',5000,'rent','y','b6.jpg',1,1);
+

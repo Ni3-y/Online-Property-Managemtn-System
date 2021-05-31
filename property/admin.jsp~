@@ -1,0 +1,47 @@
+<html>
+<head><title>Login Form For Admin
+</title></head>
+<body background="Images/1.jpg"  text="001122">
+
+<form name="login" method="POST" action="/property/admin_login" >
+
+<INPUT TYPE="hidden" name="userAction" value="login" >
+
+<table width=100% colspan=2 cellspacing=0 border=2 color=red >
+<tr bgcolor=yellow><td align=center> <font  size=5   ><b>Login Here!</b></font></tr></td></center>
+
+<tr><td>
+<table cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffaaff  >
+
+
+<tr><td>
+<font size=3 face="verdhana"><b><br>&nbsp&nbsp Username</td>
+	 <td>:</td>
+ <td><br><input type="text" name="txt_userName" size=35 maxlength=15>
+</td>
+</tr>
+
+<tr><td><font size=3 face="verdhana"><b><br>&nbsp&nbsp Password</td></font>	
+ <td>:</td>
+<td><br><input type="password" name="txtPassword" size=35 maxlength=8>
+</td>
+</tr>
+
+<tr><td>&nbsp</tr></td>
+
+<tr><td>&nbsp</tr></td>
+
+<tr><td colspan=3><center>
+	  <input type="submit" name="Sign In" value="&nbsp&nbsp&nbsp&nbsp Login &nbsp&nbsp&nbsp&nbsp" >
+					 <input type="button" name="New User" value="New User">
+</center></td>
+<tr><td>&nbsp</tr></td>
+</table>
+
+<td width=20%><img src="Images/2.jpg"width=100% height=100%></td>
+</table>
+
+
+</form>
+</body>
+</html>

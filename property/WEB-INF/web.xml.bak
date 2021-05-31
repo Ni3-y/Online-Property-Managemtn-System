@@ -1,0 +1,68 @@
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+  
+
+<servlet>
+    <servlet-name>UserServlet</servlet-name>
+        <servlet-class>User.UserServlet</servlet-class>
+</servlet>
+
+ <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/User</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>Cart.CartServlet</servlet-class>
+    </servlet>
+
+ <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/Cart</url-pattern>
+ </servlet-mapping>
+
+<!--
+ <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>Book.BookServlet</servlet-class>
+    </servlet>
+
+ <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/Book</url-pattern>
+ </servlet-mapping>
+
+
+ <servlet>
+        <servlet-name>CategoryServlet</servlet-name>
+        <servlet-class>Category.CategoryServlet</servlet-class>
+    </servlet>
+
+ <servlet-mapping>
+        <servlet-name>CategoryServlet</servlet-name>
+        <url-pattern>/Category</url-pattern>
+ </servlet-mapping>
+
+
+<servlet>
+        <servlet-name>FeedbackServlet</servlet-name>
+        <servlet-class>Feedback.FeedbackServlet</servlet-class>
+    </servlet>
+
+ <servlet-mapping>
+        <servlet-name>FeedbackServlet</servlet-name>
+        <url-pattern>/Feedback</url-pattern>
+ </servlet-mapping>
+
+-->
+
+<welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+</welcome-file-list>
+
+
+</web-app>
