@@ -152,8 +152,7 @@ rs = ps.executeQuery();
 		int propertyid	=Integer.parseInt(request.getParameter("property_id"));
 		
 		int custid	= Integer.parseInt(request.getParameter("property_cust_id"));
-	
-		
+
 							  try 
 							{
 
